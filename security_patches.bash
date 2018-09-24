@@ -19,7 +19,7 @@ fi
 
 
 echo "#########Checking /etc/apache2/apache2.conf...############"
-cat /etc/apache2/apache2.conf 2>&1 | grep -q "TraceEnable Off"
+grep -q "TraceEnable Off" /etc/apache2/apache2.conf 2>&1 
 if [ $? -eq 0 ]; then 
 	echo "It looks like TRACE is already disabled on this server. Not editing file"
 else
